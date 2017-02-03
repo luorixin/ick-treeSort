@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery treetable Tests</title>
+    <link rel="stylesheet" href="css/jquery.treetable.theme.default.css">
+    <link rel="stylesheet" href="css/jquery.treetable.css" />
+     <link rel="stylesheet" type="text/css" href="http://xmo.optimix.asia/bootstrap/css/bootstrap.css?9210">
+    <link rel="stylesheet" type="text/css" href="http://xmo.optimix.asia/stylesheets/xmo/xmo_components.css?9210">
+   
+    <link rel="stylesheet" type="text/css" href="http://xmo.optimix.asia/stylesheets/xmo/application.css?9210">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="sorttable.js"></script>
+
+    <script src="jquery.treetable.js"></script>
+   
+  </head>
+  <body>
+    <div style="width:960px;margin:auto" class="table_white"><!--由于线上样式，table_white是必须的-->
+    <table id="example-basic-static"  class="treetable table table-striped table-bordered table-condensed unlimited_width search_table dataTable" cellpadding="0" cellspaceing="0" border="0">
+      <thead>
+          <tr class="odd" role="row">
+            <th class="align_left align_top l_padding_20" role="columnheader" tabindex="0" aria-controls="gdt_data" rowspan="1" colspan="1" aria-label="Order ID: activate to sort column ascending" style="width: 62px;">Name</th>
+            <!-- 要排序的字段的class加上sorting
+                  且th上加个属性alt=“json字段里面的key”
+            -->
+            <th class="align_left align_top l_padding_20 sorting" role="columnheader" tabindex="0" aria-controls="gdt_data" rowspan="1" colspan="1" aria-label="Order ID: activate to sort column ascending" style="width: 62px;"  alt="name">Name</th>
+            <th class="align_left align_top l_padding_20 sorting" role="columnheader" tabindex="0" aria-controls="gdt_data" rowspan="1" colspan="1" aria-label="Order ID: activate to sort column ascending" style="width: 62px;"  alt="audience_id">audience_id</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <!--
+        <tr data-tt-id="0" class="branch expanded">
+          <td><span class="indenter" style="padding-left: 0px;"></span>app</td>
+          <td>a</td>
+           <td>3</td>
+        </tr>
+        <tr data-tt-id="1" data-tt-parent-id="0" class="branch expanded">
+          <td><span class="indenter" style="padding-left: 19px;"></span>controllers</td>
+          <td>b</td>
+           <td>2</td>
+        </tr>
+        <tr data-tt-id="5" data-tt-parent-id="1" class="leaf expanded">
+          <td><span class="indenter" style="padding-left: 38px;"></span>application_controller.rb</td>
+          <td>c</td>
+           <td>1</td>
+        </tr>
+        <tr data-tt-id="2" data-tt-parent-id="0" class="leaf expanded">
+          <td><span class="indenter" style="padding-left: 19px;"></span>helpers</td>
+          <td>d</td>
+           <td>4</td>
+        </tr>
+        <tr data-tt-id="3" data-tt-parent-id="0" class="leaf expanded">
+          <td><span class="indenter" style="padding-left: 19px;"></span>models</td>
+          <td>f</td>
+           <td>5</td>
+        </tr>
+        <tr data-tt-id="4" data-tt-parent-id="0" class="leaf expanded">
+          <td><span class="indenter" style="padding-left: 19px;"></span>views</td>
+          <td>g</td>
+           <td>6</td>
+        </tr>
+      -->
+      </tbody></table>
+    </div>
+    <script type="text/javascript">
+    var _html4TreeTable="";
+    $(function(){
+        var json = [{"name":"高档汽车","name_en":"High-End Cars","audience_id":1194,"parent_id":0,"children":[]},{"name":"中档汽车","name_en":"Mid-range Cars","audience_id":1195,"parent_id":0,"children":[]},{"name":"入门级汽车","name_en":"Economy Cars","audience_id":1204,"parent_id":0,"children":[]},{"name":"二手车","name_en":"Used Cars","audience_id":1197,"parent_id":0,"children":[]},{"name":"汽车租赁","name_en":"Rental Cars","audience_id":1198,"parent_id":0,"children":[]},{"name":"豪华汽车","name_en":"Luxury Cars","audience_id":1199,"parent_id":0,"children":[]},{"name":"汽车保险","name_en":"Auto Insurance","audience_id":1200,"parent_id":0,"children":[]},{"name":"日本韩国车","name_en":"Japan & Korea (Car)","audience_id":1201,"parent_id":0,"children":[]},{"name":"德国车","name_en":"Germany (Car)","audience_id":1202,"parent_id":0,"children":[]},{"name":"美国车","name_en":"United States (Car)","audience_id":1203,"parent_id":0,"children":[]},{"name":"国产车","name_en":"China (Car)","audience_id":1205,"parent_id":0,"children":[]},{"name":"三厢车","name_en":"Sedan","audience_id":1206,"parent_id":0,"children":[]},{"name":"轿跑车","name_en":"Coupe","audience_id":1207,"parent_id":0,"children":[]},{"name":"两厢车","name_en":"Hatchback","audience_id":1208,"parent_id":0,"children":[]},{"name":"越野车","name_en":"SUV","audience_id":1210,"parent_id":0,"children":[]},{"name":"面包车","name_en":"Van","audience_id":1211,"parent_id":0,"children":[]},{"name":"旅行车","name_en":"Station Wagon","audience_id":1212,"parent_id":0,"children":[]},{"name":"敞篷车","name_en":"Convertible","audience_id":1214,"parent_id":0,"children":[]},{"name":"多功能车","name_en":"MPV","audience_id":1215,"parent_id":0,"children":[]},{"name":"跑车","name_en":"Sports Car","audience_id":1216,"parent_id":0,"children":[]},{"name":"护肤","name_en":"Skin Care","audience_id":1217,"parent_id":0,"children":[{"name":"抗衰老去皱","name_en":"Anti-aging / Wrinkles","audience_id":1218,"parent_id":1217},{"name":"补水保湿","name_en":"Hydration","audience_id":1219,"parent_id":1217},{"name":"美白提亮祛斑","name_en":"Brightening & Whitening","audience_id":1220,"parent_id":1217},{"name":"隔离防晒","name_en":"Sunscreen","audience_id":1221,"parent_id":1217},{"name":"清洁卸妆","name_en":"Cleansing & Makeup Removal","audience_id":1222,"parent_id":1217},{"name":"男士护肤","name_en":"Men's Skincare","audience_id":1223,"parent_id":1217},{"name":"祛痘","name_en":"Acne Removing","audience_id":1224,"parent_id":1217},{"name":"抗过敏","name_en":"Anti-allergy","audience_id":1225,"parent_id":1217},{"name":"眼部护理","name_en":"Eyecare","audience_id":1226,"parent_id":1217},{"name":"身体护肤","name_en":"Bodycare","audience_id":1227,"parent_id":1217,"children":[{"name":"祛痘","name_en":"Acne Removing","audience_id":1000,"parent_id":1227},{"name":"抗过敏","name_en":"Anti-allergy","audience_id":1001,"parent_id":1227}]}]}];
+        
+
+      //目前两个td是按照name和 audience_id来生成，如果是别的字段，则在json里面添加，然后修改js为对应字段即可
+       var sort = new SORTTREETB.SORT({
+          "id":"example-basic-static",
+          "json":json,
+          "lang":"CN"
+        });
+     }) 
+
+
+    </script>
+  </body>
+</html>
